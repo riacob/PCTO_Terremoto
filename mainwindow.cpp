@@ -38,7 +38,7 @@ void MainWindow::on_coccinella_clicked()
 void MainWindow::on_grafico_clicked()
 {
     Grafico *grafico;                      //dichiarazione del puntatore a un oggetto di classe Grafico
-    grafico=new Grafico();                 //istanza della classe Grafico per creare l'oggetto grafico
+    grafico=new Grafico(serial);                 //istanza della classe Grafico per creare l'oggetto grafico
 }
 
 void MainWindow::on_aiuto_clicked()
@@ -66,7 +66,7 @@ void MainWindow::on_manometro_clicked()
 {
                     //istanza della classe Dial per creare l'oggetto dial
     ManometroDialog *manometro;
-    manometro= new ManometroDialog();
+    manometro= new ManometroDialog(serial);
     manometro-> show();
 }
 
@@ -84,7 +84,7 @@ void MainWindow::on_iconaCampo_clicked()
 void MainWindow::on_ruotaDentata_clicked()
 {
     Impostazioni *impostazioni;             //dichiarazione del puntatore a un oggetto di classe Impostazioni
-    impostazioni=new Impostazioni();        //istanza della classe Impostaizoni per creare l'oggetto impostazioni
+    impostazioni=new Impostazioni(serial);        //istanza della classe Impostaizoni per creare l'oggetto impostazioni
     impostazioni->show();
 
 }

@@ -2,11 +2,12 @@
 #include "ui_manometro_dialog.h"
 
 
-ManometroDialog::ManometroDialog(QWidget *parent) :
+ManometroDialog::ManometroDialog(SerialTransreceiver* serialTransreceiver, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+    serial = serialTransreceiver;
 }
 
 

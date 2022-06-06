@@ -4,13 +4,14 @@
 #include <QDial>
 #include <QObject>
 #include <QWidget>
+#include "serialtransreceiver.h"
 
 class Dial : public QDial
 {
     Q_OBJECT
 
 public:
-    Dial(QWidget *parent = nullptr);
+    Dial(SerialTransreceiver* serialTransreceiver, QWidget *parent = nullptr);
     ~Dial();
 
     //metodo con la stessa funzione della setValue(), ma il valore verrà raggiunto con un certo
@@ -43,6 +44,8 @@ private:
     //richiede alla scheda il valore di energia attuale
     //e lo imosta come valore tramite setValueAnim()
     //void valueRequest();
+
+    SerialTransreceiver *serial;
 
 };
 

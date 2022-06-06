@@ -22,7 +22,6 @@ ScudettoMalignani::ScudettoMalignani(QWidget *parent) :
     player -> setSource(QUrl("qrc:/video_malignani.mp4"));
 
     // Viene collegato il player al videowidget in modo che possa riprodurre il video
-    // Viene collegato il player al videowidget in modo che possa riprodurre il video
     player -> setVideoOutput(videowidget);
 
     // Viene collegato il player all'audio in modo che possa riprodurre l'audio
@@ -32,7 +31,8 @@ ScudettoMalignani::ScudettoMalignani(QWidget *parent) :
     audio -> setVolume(50);
 
     // Viene impostato il video a fullscreen
-    videowidget -> setGeometry(this->geometry());
+    //videowidget -> setGeometry(this->geometry());
+    videowidget->setFullScreen(true);
 
     // Viene fatto partire il video
     player -> play();
@@ -46,8 +46,7 @@ ScudettoMalignani::ScudettoMalignani(QWidget *parent) :
 
     // Si effettua un connect tra il video il quale mentre viene riprodotto, si entra
     // continuamente nello SLOT ringraziamenti()
-    connect(player, &QMediaPlayer::positionChanged, this, &ScudettoMalignani::ringraziamenti);
-
+    connect(player, &QMediaPlayer::mediaStatusChanged, this, &ScudettoMalignani::ringraziamenti);
 
 
     // Si impostato i testi delle varie Label
@@ -86,7 +85,7 @@ void ScudettoMalignani::ringraziamenti()
 {
     // Se il video finisce, vengono mostrate le label ed i GroupBox
 
-    if((player -> position()) >= 6000)      // Inserire la durata del video in ms
+    if (player->mediaStatus() == QMediaPlayer::EndOfMedia)
     {
         // Viene eliminato il video altrimenti non è possibile visualizzare le Label
         delete player;
@@ -116,8 +115,14 @@ void ScudettoMalignani::ringraziamenti()
 
         ui -> groupBox_sigBurelli -> setGeometry((this->width() / 2),2*(this->height() / 3),(this->width() / 2),(this->height() / 3));
         ui -> label_sigBurelli -> setGeometry(0,0,(this->width() / 2),(this->height() / 3));
+
     }
 
 }
 
+// Previene la chiusura accidentale della finestra tramite un override del QKeyEvent, ignorando quindi il risultato della pressione di qualsiasi tasto
+void ScudettoMalignani::keyPressEvent(QKeyEvent* event)
+{
+    event->ignore();
+}
 

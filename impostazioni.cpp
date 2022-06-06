@@ -6,11 +6,12 @@
 #include <QDialog>
 #include "com.h"
 
-Impostazioni::Impostazioni(QWidget *parent) :     //
+Impostazioni::Impostazioni(SerialTransreceiver* serialTransreceiver, QWidget *parent) :     //
     QDialog(parent),
     ui(new Ui::Impostazioni)
 {
     ui->setupUi(this);
+    serial = serialTransreceiver;
 }
 
 Impostazioni::~Impostazioni()
@@ -99,7 +100,7 @@ void Impostazioni::start()
 void Impostazioni::on_pushButton_2_clicked()
 {
     COM* com;
-    com= new COM();
+    com= new COM(serial);
     com->show();
 }
 

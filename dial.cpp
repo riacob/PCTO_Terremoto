@@ -2,7 +2,7 @@
 #include <QTimer>
 #include <QPainter>
 
-Dial::Dial(QWidget *parent) :
+Dial::Dial(SerialTransreceiver* serialTransreceiver, QWidget *parent) :
     QDial(parent)
 {
     //imposto l'immagine che farà da sfondo
@@ -18,6 +18,7 @@ Dial::Dial(QWidget *parent) :
 
     //faccio la prima richiesta dati in modo da iniziare il ciclo automatico di richieste
    // valueRequest();
+    serial = serialTransreceiver;
 }
 
 Dial::~Dial()

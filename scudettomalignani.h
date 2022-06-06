@@ -5,6 +5,7 @@
 #include <QtMultimedia/QMediaPlayer>
 #include <QtMultimedia/QAudioOutput>
 #include <QtMultimediaWidgets/QVideoWidget>
+#include <QKeyEvent>
 
 namespace Ui {
 class ScudettoMalignani;
@@ -26,6 +27,7 @@ private:
     QAudioOutput* audio;
 
     void ringraziamenti();
+    void keyPressEvent(QKeyEvent* event);
 };
 
 #endif // SCUDETTOMALIGNANI_H

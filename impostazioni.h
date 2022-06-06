@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QObject>
 #include <QWidget>
+#include "serialtransreceiver.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -15,7 +16,7 @@ class Impostazioni : public QDialog
     Q_OBJECT
 
 public:
-    explicit Impostazioni(QWidget *parent = nullptr);
+    explicit Impostazioni(SerialTransreceiver* serialTransreceiver, QWidget *parent = nullptr);
     ~Impostazioni();
 
 
@@ -42,6 +43,7 @@ private:
     Ui::Impostazioni *ui;
     void enableUi(bool enabled);
     void resetUi();
+    SerialTransreceiver* serial;
 
     // premendo il pulsante CANCEL la finestra si chiude
 private slots:

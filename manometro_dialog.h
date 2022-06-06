@@ -2,6 +2,7 @@
 #define MANOMETRO_DIALOG_H
 
 #include <QDialog>
+#include "serialtransreceiver.h"
 
 namespace Ui {
 class Dialog;
@@ -12,7 +13,7 @@ class ManometroDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit ManometroDialog(QWidget *parent = nullptr);
+    explicit ManometroDialog(SerialTransreceiver* serialTransreceiver, QWidget *parent = nullptr);
     ~ManometroDialog();
 
 private slots:
@@ -26,6 +27,7 @@ private slots:
 
 private:
     Ui::Dialog *ui;
+    SerialTransreceiver* serial;
 
 };
 
