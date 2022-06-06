@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Civetta.png</file>
+        <file>Coccinella.png</file>
+        <file>Grafico.png</file>
+        <file>Icona da campo.png</file>
+        <file>Mano.png</file>
+        <file>Manometro.png</file>
+        <file>Occhio.png</file>
+        <file>Ruota Dentata.png</file>
+        <file>Scudetto.png</file>
+    </qresource>
+</RCC>

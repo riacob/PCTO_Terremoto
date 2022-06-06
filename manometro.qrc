@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ago.svg</file>
+        <file>E_Ok.svg</file>
+        <file>E_Pollice.svg</file>
+        <file>E_Saluto.svg</file>
+        <file>sfondoImg.png</file>
+        <file>window_icon.png</file>
+        <file>manometro_sfondo.svg</file>
+        <file>ombra_ago.svg</file>
+    </qresource>
+</RCC>

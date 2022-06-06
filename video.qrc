@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>video_malignani.mp4</file>
+    </qresource>
+</RCC>
